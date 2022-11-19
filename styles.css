@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+body {
+  background-color: rgb(20, 20, 20);
+  margin: 0;
+}
+
+#menu {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  min-height: 50vh;
+}
+
+.menu-item {
+  color: white;
+  font-size: clamp(1.5rem, 4vw, 4rem);
+  font-family: "Permanent Marker", cursive;
+
+  display: block;
+  text-decoration: none;
+  padding: clamp(0.25rem, 0.5vw, 1rem) 0rem;
+  transition: ease-in 210ms;
+}
+
+#menu-items {
+  margin-left: clamp(4rem, 20vw, 10vw);
+  position: relative;
+  z-index: 2;
+}
+
+#menu-items:hover > .menu-item {
+  opacity: 0.3;
+}
+
+#menu-items:hover > .menu-item:hover {
+  opacity: 1;
+}
+
+#menu-background-pattern {
+  height: 100vh;
+  width: 100vw;
+
+  background-image: radial-gradient(
+    rgba(2255, 255, 255, 0.1) 7%,
+    transparent 13%
+  );
+  background-position: 0% 0%;
+  background-size: 12vmin 12vmin;
+
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 1;
+
+  transition: opacity 800ms ease, background-size 800ms ease;
+}
+
+#menu-background-image {
+  height: 100%;
+  width: 100%;
+
+  background-image: url("https://images.unsplash.com/photo-1536318431364-5cc762cfc8ec?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8&w=1000&q=80");
+
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 0;
+
+  background-position: center 40%;
+  background-repeat: no-repeat;
+  background-size: 110vmax;
+  opacity: 0.15;
+
+  transition: opacity 800ms ease, background-size 800ms ease,
+    background-position 800ms ease;
+}
+
+#menu-items:hover ~ #menu-background-image {
+  background-size: 100vmax;
+  opacity: 0.1;
+}
+
+#menu-items:hover ~ #menu-background-pattern {
+  background-size: 11vmin 11vmin;
+  opacity: 0.5;
+}
+
+/* Positioning grid using JS indexes *********/
+/********************************************/
+
+#menu[data-active-index="0"] > #menu-background-pattern {
+  background-position: 0% -25%;
+}
+
+#menu[data-active-index="1"] > #menu-background-pattern {
+  background-position: 0% -50%;
+}
+
+#menu[data-active-index="2"] > #menu-background-pattern {
+  background-position: 0% -75%;
+}
+
+#menu[data-active-index="3"] > #menu-background-pattern {
+  background-position: 0% -100%;
+}
+
+#menu[data-active-index="0"] > #menu-background-image {
+  background-position: center 45%;
+}
+
+#menu[data-active-index="1"] > #menu-background-image {
+  background-position: center 50%;
+}
+
+#menu[data-active-index="2"] > #menu-background-image {
+  background-position: center 55%;
+}
+
+#menu[data-active-index="3"] > #menu-background-image {
+  background-position: center 60%;
+}
