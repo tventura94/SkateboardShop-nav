@@ -4,11 +4,21 @@ body {
   margin: 0;
 }
 
+#side-menu {
+  display: grid;
+  grid-template-columns: 200px 200px 200px;
+}
+img {
+  border-radius: 50%;
+  grid-column: 2 / 3;
+  width: 95%;
+  z-index: 1;
+  transition: opacity 800ms ease, background-size 800ms ease;
+}
 #menu {
   height: 100vh;
   display: flex;
   align-items: center;
-  min-height: 50vh;
 }
 
 .menu-item {
@@ -52,7 +62,8 @@ body {
   top: 0px;
   z-index: 1;
 
-  transition: opacity 800ms ease, background-size 800ms ease;
+  transition: opacity 800ms ease, background-position 800ms ease,
+    background-size 800ms ease;
 }
 
 #menu-background-image {
