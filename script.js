@@ -7,3 +7,16 @@ Array.from(document.getElementsByClassName("menu-item")).forEach(
     };
   }
 );
+
+let cursor = true;
+let speed = 520;
+
+setInterval(() => {
+  if (cursor) {
+    document.getElementById("cursor").style.opacity = 0;
+    cursor = false;
+  } else {
+    document.getElementById("cursor").style.opacity = 1;
+    cursor = true;
+  }
+}, speed);

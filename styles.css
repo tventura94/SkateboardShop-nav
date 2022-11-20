@@ -1,31 +1,70 @@
-@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fjalla+One&family=Permanent+Marker&display=swap");
+
+/************RIGHT TITLE**********
+**********************************/
+* {
+  margin: 0;
+}
 body {
   background-color: rgb(20, 20, 20);
   margin: 0;
 }
 
-#side-menu {
+#title {
   display: grid;
   grid-template-columns: 200px 200px 200px;
+  transition: ease-out 425ms;
+  letter-spacing: 4px;
+  z-index: 0;
+  margin: 0 auto;
 }
-img {
-  border-radius: 50%;
-  grid-column: 2 / 3;
-  width: 95%;
-  z-index: 1;
-  transition: opacity 800ms ease, background-size 800ms ease;
+#name {
+  font-size: 75px;
+  font-family: "Fjalla One", sans-serif;
+  color: white;
+  grid-column: 2 / 5;
+  text-align: center;
 }
+span {
+  color: silver;
+}
+span + #cursor {
+  font-size: 55px;
+  color: rgb(251, 235, 235);
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-weight: 300;
+  padding: 0;
+  margin: 0;
+}
+#bio {
+  font-size: 50px;
+  font-family: "Fjalla One", sans-serif;
+  color: white;
+  grid-column: 2 / 4;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+#menu-items:hover ~ #title {
+  opacity: 0;
+}
+/*@#@#@#@#@#@#            #@#@#@#@#@#@#@#@#
+@#@#@#@#@#@#@# LEFT MENU @#@#@#@#@#@#@#@#@#@#@#@ 
+************************************************/
+
 #menu {
   height: 100vh;
   display: flex;
   align-items: center;
+  will-change: position;
+  margin: 0 auto;
 }
 
 .menu-item {
   color: white;
-  font-size: clamp(1.5rem, 4vw, 4rem);
+  font-size: 4rem;
   font-family: "Permanent Marker", cursive;
-
+  cursor: pointer;
   display: block;
   text-decoration: none;
   padding: clamp(0.25rem, 0.5vw, 1rem) 0rem;
@@ -45,6 +84,12 @@ img {
 #menu-items:hover > .menu-item:hover {
   opacity: 1;
 }
+
+/*%*%*%*%*
+          Menu Background (gradiant and image)
+          ************************************
+           % * # @ ! * $ # (@ ! # _ ) ( & $ 
+                                              %*%*%*%*%*/
 
 #menu-background-pattern {
   height: 100vh;
@@ -98,6 +143,7 @@ img {
 
 /* Positioning grid using JS indexes *********/
 /********************************************/
+/*******************************************/
 
 #menu[data-active-index="0"] > #menu-background-pattern {
   background-position: 0% -25%;
@@ -130,3 +176,5 @@ img {
 #menu[data-active-index="3"] > #menu-background-image {
   background-position: center 60%;
 }
+
+/******MEDIA-QUERIES**********/
